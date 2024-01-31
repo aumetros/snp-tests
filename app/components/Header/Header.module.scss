@@ -1,5 +1,5 @@
 .root {
-  padding-bottom: 10px;
+  border-bottom: 1px var(--grayscale-80) solid;
 }
 
 .container {
@@ -12,4 +12,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
 }

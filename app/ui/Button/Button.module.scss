@@ -1,0 +1,17 @@
+@import "styles/mixins.scss";
+
+.header {
+  min-width: 190px;
+  min-height: 50px;
+  padding: 0;
+  border: 1px var(--grayscale-85) solid;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include hover;
+
+  &:hover {
+    border-color: var(--grayscale-white);
+  }
+}

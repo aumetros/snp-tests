@@ -20,14 +20,14 @@
 	min-width: 156px;
 	height: 40px;
   align-self: center;
-  border: 2px solid var(--primary-blue-light);
+  border: 2px solid var(--primary-blue-deep);
   border-radius: 10px;
 	color: var(--primary-blue-deep);
 	background-color: transparent;
 	cursor: pointer;
 
 	&:hover {
-		border-color: var(--primary-blue-navy);
+		border-color: var(--primary-blue-light);
 	}
 
 	&.disable {

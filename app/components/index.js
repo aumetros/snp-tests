@@ -3,5 +3,7 @@ import Main from './Main';
 import RootLayoutContainer from './RootLayoutContainer';
 import Section from './Section';
 import Footer from './Footer';
+import Form from './Form';
+import AuthForm from './Form/AuthForm';
 
-export { RootLayoutContainer, Header, Main, Section, Footer };
+export { RootLayoutContainer, Header, Main, Section, Footer, Form, AuthForm };

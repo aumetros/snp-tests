@@ -2,6 +2,7 @@ import styles from './Input.module.scss';
 
 export default function Input({
 	type,
+	name,
 	placeholder,
 	mode,
 	register,
@@ -11,8 +12,8 @@ export default function Input({
 	return (
 		<input
 			type={type}
-			name={mode}
-			id={mode}
+			name={name}
+			id={name}
 			placeholder={placeholder}
 			className={styles[mode]}
 			// {...(register ? register(name, validation) : null)}

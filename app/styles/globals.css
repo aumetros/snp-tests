@@ -3,7 +3,7 @@
   --grayscale-85: #ffffff85;
   --grayscale-80: #ffffff80;
   --grayscale-25: #ffffff25;
-  --grayscale-10: #ffffff10;
+  --grayscale-10: #858484;
   --grayscale-grey: #8180808a;
   --grayscale-grey-ph: #a0a0a0;
   --grayscale-grey-light: #e8e8e8;
@@ -13,6 +13,7 @@
 
   --primary-blue-deep: #0c1526;
   --primary-blue-navy: #142c57;
+  --primary-blue-light: #6087cf;
 
   --primary-red-dark: #4f0101;
   --primary-red-light: #691010;

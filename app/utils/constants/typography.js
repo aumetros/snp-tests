@@ -10,4 +10,5 @@ export const VARIANTS_MAPPING = {
 	span1: 'span',
 	span2: 'span',
 	span3: 'span',
+	error: 'span',
 };

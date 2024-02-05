@@ -19,13 +19,35 @@
 	line-height: 24px;
 }
 
+.typography--variant-par2 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+}
+
 .typography--variant-span1 {
 	margin: 0;
 	font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
+	font-weight: 400;
+	line-height: 20px;
 }
 
 .typography--color-grayscale-white {
 	color: var(--grayscale-white);
+}
+
+.typography--color-blue-deep {
+	color: var(--primary-blue-deep);
+}
+
+.typography--variant-error {
+	display: block;
+	min-height: 18px;
+	margin-bottom: 10px;
+	align-self: flex-start;
+	color: var(--primary-red-error);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
 }

@@ -1,17 +1,40 @@
-@import "styles/mixins.scss";
+@import 'styles/mixins.scss';
 
 .header {
-  min-width: 190px;
-  min-height: 50px;
-  padding: 0;
-  border: 1px var(--grayscale-85) solid;
+	min-width: 190px;
+	min-height: 50px;
+	padding: 0;
+	border: 1px var(--grayscale-85) solid;
+	border-radius: 10px;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include hover;
+
+	&:hover {
+		border-color: var(--grayscale-white);
+	}
+}
+
+.auth {
+	min-width: 156px;
+	height: 40px;
+  align-self: center;
+  border: 2px solid var(--primary-blue-light);
   border-radius: 10px;
-  background-color: transparent;
-  cursor: pointer;
+	color: var(--primary-blue-deep);
+	background-color: transparent;
+	cursor: pointer;
 
-  @include hover;
+	&:hover {
+		border-color: var(--primary-blue-navy);
+	}
 
-  &:hover {
-    border-color: var(--grayscale-white);
-  }
+	&.disable {
+		color: var(--grayscale-10);
+		border-color: var(--grayscale-10);
+		cursor: auto;
+	}
+
+	@include hover;
 }

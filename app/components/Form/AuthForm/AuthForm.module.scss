@@ -1,0 +1,18 @@
+.container {
+	display: flex;
+	max-width: 440px;
+	padding: 40px;
+	margin-inline: auto;
+	flex-direction: column;
+	box-sizing: border-box;
+	align-items: flex-start;
+	border-radius: 12px;
+	background-color: var(--grayscale-white);
+}
+
+.admin__container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}

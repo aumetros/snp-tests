@@ -8,12 +8,14 @@ export default function RegisterPage() {
 	return (
 		<Main>
 			<Section>
-				<div className={styles['title-container']}>
+				<div className={styles['container']}>
 					<Typography variant={H2}>Регистрация</Typography>
 				</div>
 			</Section>
 			<Section>
-				<AuthForm mode={SIGNUP} />
+				<div className={styles['container']}>
+					<AuthForm mode={SIGNUP} />
+				</div>
 			</Section>
 		</Main>
 	);

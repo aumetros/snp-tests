@@ -2,8 +2,9 @@
 import { useForm } from 'react-hook-form';
 import { Form } from 'components';
 import { Input, InputError, Button, Typography, Checkbox } from 'ui';
-import { AUTH, AUTH_CHECK, ERROR, SIGNUP } from 'utils/constants/modes';
+import { AUTH, AUTH_CHECK, ERROR, SIGNUP, SIGNIN } from 'utils/constants/modes';
 import { PAR2, BLUE_DEEP } from 'utils/constants/variants';
+import { signUpApi, signInApi } from 'utils/actions/auth';
 import {
 	USER_PH,
 	REQUIRED,
@@ -13,7 +14,7 @@ import {
 	PASS_MIN,
 	PASS_CONF,
 	PASS_CONF_INVALID,
-} from '@/utils/constants/messages';
+} from 'utils/constants/messages';
 import styles from './AuthForm.module.scss';
 
 export default function AuthForm({ mode }) {
@@ -28,7 +29,26 @@ export default function AuthForm({ mode }) {
 	});
 
 	function onSubmit(data) {
-		console.log(data);
+		switch (mode) {
+			case SIGNUP:
+				signUpApi(data)
+					.then((res) => {
+						console.log(res);
+					})
+					.catch((err) => {
+						console.log(err.message);
+					});
+				break;
+			case SIGNIN:
+				signInApi(data)
+					.then((res) => {
+						console.log(res);
+					})
+					.catch((err) => {
+						console.log(err.message);
+					});
+				break;
+		}
 	}
 
 	return (

@@ -4,7 +4,8 @@ import { Form } from 'components';
 import { Input, InputError, Button, Typography, Checkbox } from 'ui';
 import { AUTH, AUTH_CHECK, ERROR, SIGNUP, SIGNIN } from 'utils/constants/modes';
 import { PAR2, BLUE_DEEP } from 'utils/constants/variants';
-import { signUpApi, signInApi } from 'utils/actions/auth';
+// import { signUpApi, signInApi } from 'utils/actions/auth';
+import { signUpUser, signInUser } from '@/store/slices/usersSlice';
 import { useDispatch } from 'react-redux';
 import { setMessage } from 'store/slices/messagesSlice';
 import { openModal } from '@/store/slices/modalsSlice';
@@ -35,23 +36,10 @@ export default function AuthForm({ mode }) {
 	async function onSubmit(data) {
 		switch (mode) {
 			case SIGNUP:
-				try {
-					const result = await signUpApi(data);
-
-					console.log(result);
-				} catch (err) {
-					dispatch(setMessage(err.message));
-					dispatch(openModal('errorModal'));
-				}
+				dispatch(signUpUser(data));
 				break;
 			case SIGNIN:
-				try {
-					const result = await signInApi(data);
-					console.log(result);
-				} catch (err) {
-					dispatch(setMessage(err.message));
-					dispatch(openModal('errorModal'));
-				}
+				dispatch(signInUser(data));
 				break;
 		}
 	}

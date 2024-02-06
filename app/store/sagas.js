@@ -2,6 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { signUpApi, signInApi } from 'utils/actions/auth';
 import { setMessage } from './slices/messagesSlice';
 import { setUser } from './slices/usersSlice';
+import { openModal } from './slices/modalsSlice';
 import { SIGN_UP, SIGN_IN } from 'utils/constants/saga_actions';
 
 export function* signUpSaga({ payload }) {

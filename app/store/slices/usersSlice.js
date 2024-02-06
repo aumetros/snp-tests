@@ -1,6 +1,6 @@
 'use client';
 import { createSlice, createAction } from '@reduxjs/toolkit';
-import { SIGN_UP, SIGN_IN } from '@/utils/constants/saga_actions';
+import { SIGN_UP, SIGN_IN } from 'utils/constants/saga_actions';
 
 const initialState = {
 	user: {},

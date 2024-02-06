@@ -5,6 +5,9 @@ import { Input, InputError, Button, Typography, Checkbox } from 'ui';
 import { AUTH, AUTH_CHECK, ERROR, SIGNUP, SIGNIN } from 'utils/constants/modes';
 import { PAR2, BLUE_DEEP } from 'utils/constants/variants';
 import { signUpApi, signInApi } from 'utils/actions/auth';
+import { useDispatch } from 'react-redux';
+import { setMessage } from 'store/slices/messagesSlice';
+import { openModal } from '@/store/slices/modalsSlice';
 import {
 	USER_PH,
 	REQUIRED,
@@ -18,6 +21,7 @@ import {
 import styles from './AuthForm.module.scss';
 
 export default function AuthForm({ mode }) {
+	const dispatch = useDispatch();
 	const {
 		register,
 		handleSubmit,
@@ -28,25 +32,26 @@ export default function AuthForm({ mode }) {
 		mode: 'onChange',
 	});
 
-	function onSubmit(data) {
+	async function onSubmit(data) {
 		switch (mode) {
 			case SIGNUP:
-				signUpApi(data)
-					.then((res) => {
-						console.log(res);
-					})
-					.catch((err) => {
-						console.log(err.message);
-					});
+				try {
+					const result = await signUpApi(data);
+
+					console.log(result);
+				} catch (err) {
+					dispatch(setMessage(err.message));
+					dispatch(openModal('errorModal'));
+				}
 				break;
 			case SIGNIN:
-				signInApi(data)
-					.then((res) => {
-						console.log(res);
-					})
-					.catch((err) => {
-						console.log(err.message);
-					});
+				try {
+					const result = await signInApi(data);
+					console.log(result);
+				} catch (err) {
+					dispatch(setMessage(err.message));
+					dispatch(openModal('errorModal'));
+				}
 				break;
 		}
 	}

@@ -16,7 +16,7 @@ export default function Input({
 			id={name}
 			placeholder={placeholder}
 			className={styles[mode]}
-			// {...(register ? register(name, validation) : null)}
+			{...(register ? register(name, validation) : null)}
 			{...props}
 		/>
 	);

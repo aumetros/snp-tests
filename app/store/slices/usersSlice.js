@@ -4,6 +4,7 @@ import { SIGN_UP, SIGN_IN } from 'utils/constants/saga_actions';
 
 const initialState = {
 	user: {},
+	isLogged: false,
 };
 
 const usersSlice = createSlice({

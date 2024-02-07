@@ -1,9 +1,13 @@
+'use client'
 import { Main } from "./components";
+import {ProtectedRoute} from "components";
 
-export default function Home() {
+const Home = () => {
   return (
    <Main>
 
    </Main>
   );
 }
+
+export default ProtectedRoute(Home);

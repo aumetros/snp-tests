@@ -8,6 +8,7 @@ import AuthForm from './Form/AuthForm';
 import Navigation from './Navigation';
 import Modal from './Modal';
 import AuthModal from './Modal/AuthModal';
+import ProtectedRoute from './ProtectedRoute';
 
 export {
 	RootLayoutContainer,
@@ -20,4 +21,5 @@ export {
 	Navigation,
 	Modal,
 	AuthModal,
+	ProtectedRoute,
 };

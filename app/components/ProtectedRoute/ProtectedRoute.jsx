@@ -10,13 +10,9 @@ export default function protectedRoute(Component) {
 
 		useEffect(() => {
 			if (!users.isLogged) {
-				return redirect('/login');
+				redirect('/login');
 			}
 		}, [users.isLogged]);
-
-		// if (!users.isLogged) {
-		// 	return null;
-		// }
 
 		return <Component {...props} />;
 	};

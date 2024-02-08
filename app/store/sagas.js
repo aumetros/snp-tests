@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import { signUpApi, signInApi } from 'utils/actions/auth';
 import { setMessage } from './slices/messagesSlice';
-import { setUser } from './slices/usersSlice';
+import { setUser, setLoggin } from './slices/usersSlice';
 import { openModal } from './slices/modalsSlice';
 import { SIGN_UP, SIGN_IN } from 'utils/constants/saga_actions';
 
@@ -10,6 +10,7 @@ export function* signUpSaga({ payload }) {
 		const user = yield signUpApi(payload);
 		console.log(user);
 		yield put(setUser(user));
+		yield put(setLoggin(true));
 	} catch (err) {
 		yield put(setMessage(err.message));
 		yield put(openModal('errorModal'));
@@ -21,6 +22,7 @@ export function* signInSaga({ payload }) {
 		const user = yield signInApi(payload);
 		console.log(user);
 		yield put(setUser(user));
+		yield put(setLoggin(true));
 	} catch (err) {
 		yield put(setMessage(err.message));
 		yield put(openModal('errorModal'));

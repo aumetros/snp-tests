@@ -1,14 +1,15 @@
 'use client';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Form } from 'components';
+import { redirect } from 'next/navigation';
 import { Input, InputError, Button, Typography, Checkbox } from 'ui';
 import { AUTH, AUTH_CHECK, ERROR, SIGNUP, SIGNIN } from 'utils/constants/modes';
 import { PAR2, BLUE_DEEP } from 'utils/constants/variants';
-// import { signUpApi, signInApi } from 'utils/actions/auth';
 import { signUpUser, signInUser } from '@/store/slices/usersSlice';
-import { useDispatch } from 'react-redux';
-import { setMessage } from 'store/slices/messagesSlice';
-import { openModal } from '@/store/slices/modalsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUsers } from 'store/selectors';
+
 import {
 	USER_PH,
 	REQUIRED,
@@ -23,6 +24,8 @@ import styles from './AuthForm.module.scss';
 
 export default function AuthForm({ mode }) {
 	const dispatch = useDispatch();
+	const users = useSelector(selectUsers);
+
 	const {
 		register,
 		handleSubmit,
@@ -43,6 +46,12 @@ export default function AuthForm({ mode }) {
 				break;
 		}
 	}
+
+	React.useEffect(() => {
+		if (users.isLogged) {
+			redirect('/');
+		}
+	}, [users.isLogged]);
 
 	return (
 		<Form name={mode} onSubmit={handleSubmit(onSubmit)}>

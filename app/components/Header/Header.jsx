@@ -1,10 +1,23 @@
+'use client';
+import React from 'react';
 import { Section, Navigation } from 'components';
 import { Logo, Typography } from 'ui';
 import { HEADER } from 'utils/constants/modes';
 import { H1 } from 'utils/constants/variants';
+import { getCurrentUser } from '@/utils/actions/auth';
 import styles from './Header.module.scss';
 
 export default function Header() {
+	// React.useEffect(() => {
+	// 	getCurrentUser()
+	// 		.then((res) => {
+	// 			console.log(res);
+	// 		})
+	// 		.then((err) => {
+	// 			console.log(err.message);
+	// 		});
+	// }, []);
+
 	return (
 		<header className={styles.root}>
 			<Section>

@@ -1,5 +1,5 @@
-import { ERR_SIGNUP, ERR_SIGNIN } from "utils/constants/messages";
-import { BASE_URL, SCOPE } from "utils/constants/api_data";
+import { ERR_SIGNUP, ERR_SIGNIN } from 'utils/constants/messages';
+import { BASE_URL, SCOPE } from 'utils/constants/api_data';
 
 function checkResponse(res, message) {
 	if (!res.ok) {
@@ -19,7 +19,7 @@ export async function signUpApi(data) {
 		body: JSON.stringify(data),
 	});
 
-  return checkResponse(res, ERR_SIGNUP)
+	return checkResponse(res, ERR_SIGNUP);
 }
 
 export async function signInApi(data) {
@@ -33,5 +33,18 @@ export async function signInApi(data) {
 		body: JSON.stringify(data),
 	});
 
-  return checkResponse(res, ERR_SIGNIN)
+	return checkResponse(res, ERR_SIGNIN);
+}
+
+export async function getCurrentUser() {
+	const res = await fetch(`${BASE_URL}/users/current`, {
+		method: 'GET',
+		credentials: 'include',
+		headers: {
+			'Content-Type': 'application/json',
+			'scope-key': SCOPE,
+		},
+	});
+
+	return checkResponse(res, ERR_SIGNIN);
 }

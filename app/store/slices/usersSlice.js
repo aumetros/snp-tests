@@ -14,12 +14,15 @@ const usersSlice = createSlice({
 		setUser(state, { payload }) {
 			state.user = payload;
 		},
+		setLoggin(state, { payload }) {
+			state.isLogged = payload;
+		},
 	},
 });
 
 export const signUpUser = createAction(SIGN_UP);
 export const signInUser = createAction(SIGN_IN);
 
-export const { setUser } = usersSlice.actions;
+export const { setUser, setLoggin } = usersSlice.actions;
 
 export default usersSlice.reducer;
